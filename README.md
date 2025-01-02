@@ -21,81 +21,85 @@ This project provides the backend functionality for a user authentication system
 - [Node.js](https://nodejs.org)
 - [MongoDB](https://www.mongodb.com) (local or MongoDB Atlas instance)
 
-### Steps
+## Steps
 
-1. Clone the Repository:
-   ```bash
-   git clone https://github.com/ADITHYAKUMARREDDY/mern-authentication-backend-jwt-bcrypt.git
-   cd mern-authentication-backend-jwt-bcrypt
+### 1. Clone the Repository:
+```bash
+git clone https://github.com/ADITHYAKUMARREDDY/mern-authentication-backend-jwt-bcrypt.git
+cd mern-authentication-backend-jwt-bcrypt
+```
 
+### 2. Install Dependencies:
+```bash
 npm install
+```
 
-Set Up Environment Variables:
-
-Create a .env file in the root directory and add the following:
-env
-Copy code
+### 3. Set Up Environment Variables:
+Create a `.env` file in the root directory and add the following variables:
+```bash
 PORT=5000
 MONGO_URI=your-mongodb-connection-string
 JWT_SECRET=your-secret-key
 JWT_EXPIRES_IN=90d
+```
 
-Running the Application
-Start the Server:
+## Running the Application
 
-bash
-Copy code
+### Start the Server:
+```bash
 npm start
-The server will run on http://localhost:5000.
+```
+The server will run on [http://localhost:5000](http://localhost:5000).
 
-API Endpoints
-Register User
-Endpoint: POST /api/auth/signup
+---
 
-Headers:
+## API Endpoints
 
-plaintext
-Copy code
+### **Register User**
+**Endpoint:** `POST /api/auth/signup`
+
+**Headers:**
+```plaintext
 Content-Type: application/json
-Body:
+```
 
-json
-Copy code
+**Body:**
+```json
 {
   "name": "John Doe",
   "email": "john@example.com",
   "password": "password123",
   "role": "user"
 }
-Response:
+```
 
-json
-Copy code
+**Response:**
+```json
 {
   "status": "success",
   "message": "User registered successfully",
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2YjcyYTQ0ZDk2NjljNWRmYTRjZTYiLCJpYXQiOjE3MzU4MzMzODYsImV4cCI6MTc0MzYwOTM4Nn0.oE_lpu7rGk06dvAWVUCrKZxnGbUYdOMSCncdlQlhJnw"
 }
-Login User
-Endpoint: POST /api/auth/login
+```
 
-Headers:
+### **Login User**
+**Endpoint:** `POST /api/auth/login`
 
-plaintext
-Copy code
+**Headers:**
+```plaintext
 Content-Type: application/json
-Body:
+```
 
-json
-Copy code
+**Body:**
+```json
 {
   "email": "john@example.com",
   "password": "password123"
 }
-Response:
+```
 
-json
-Copy code
+**Response:**
+```json
 {
   "status": "success",
   "message": "User logged in successfully",
@@ -107,13 +111,12 @@ Copy code
   },
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2YjcyYTQ0ZDk2NjljNWRmYTRjZTYiLCJpYXQiOjE3MzU4MzM1NzAsImV4cCI6MTc0MzYwOTU3MH0.2akgu5RR39-Mq-W_TCMqec9RTHbbb9od4nwoQeAPMrU"
 }
+```
 
+---
 
-Technologies Used
-Backend: Node.js, Express.js
-Database: MongoDB, Mongoose
-Authentication: JWT (JSON Web Tokens)
-Password Hashing: Bcrypt
-
-
-
+## Technologies Used
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Authentication:** JWT (JSON Web Tokens)
+- **Password Hashing:** Bcrypt
